@@ -12,11 +12,77 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
     jsonfile.readFile('./persistence/Novelas.json',(err,obj)=>{
-        obj.push(req.body);
-        jsonfile.writeFile('./persistence/Novelas.json', obj, function(err) {
-            if (err) throw err;
+        let ids= obj.map(el=>el.id);
+        if(ids.includes(req.body.id)){
+            res.send('el id ya existe');
+        }
+        else{
+            obj.push(req.body);
+            jsonfile.writeFile('./persistence/Novelas.json', obj, function(err) {
+                if (err) throw err;
+            });
+            res.send(obj);
+        }
+    });
+});
+
+router.put('/:id', function(req, res, next) {
+    let id = parseInt(req.params.id);
+    jsonfile.readFile('./persistence/Novelas.json',(err,obj)=>{
+        var ind=-1;
+        let ids= obj.map((el,index)=>{
+            if(el.id===id){
+                ind=index;
+            }
+            return el.id;
         });
-        res.send(obj);
+        if(ids.includes(id)){
+            obj.id=id;
+            obj[ind]=req.body;
+            res.send(obj);
+        }
+        else{
+            res.send('el id no existe');
+        }
+    });
+});
+
+router.get('/:id', function(req, res, next) {
+    let id = parseInt(req.params.id);
+    jsonfile.readFile('./persistence/Novelas.json',(err,obj)=>{
+        var ind=-1;
+        let ids= obj.map((el,index)=>{
+            if(el.id===id){
+                ind=index;
+            }
+            return el.id;
+        });
+        if(ids.includes(id)){
+            res.send(obj[ind]);
+        }
+        else{
+            res.send('el id no existe');
+        }
+    });
+});
+
+router.delete('/:id', function(req, res, next) {
+    let id = parseInt(req.params.id);
+    jsonfile.readFile('./persistence/Novelas.json',(err,obj)=>{
+        var ind=-1;
+        let ids= obj.map((el,index)=>{
+            if(el.id===id){
+                ind=index;
+            }
+            return el.id;
+        });
+        if(ids.includes(id)){
+            obj.splice(ind,1);
+            res.send(obj);
+        }
+        else{
+            res.send('el id no existe');
+        }
     });
 });
 
