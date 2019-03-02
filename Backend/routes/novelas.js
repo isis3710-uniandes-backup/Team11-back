@@ -14,6 +14,7 @@ router.post('/', function(req, res, next) {
     jsonfile.readFile('./persistence/Novelas.json',(err,obj)=>{
         let ids= obj.map(el=>el.id);
         if(ids.includes(req.body.id)){
+            res.statusCode=400;
             res.send('el id ya existe');
         }
         else{
@@ -39,9 +40,13 @@ router.put('/:id', function(req, res, next) {
         if(ids.includes(id)){
             obj.id=id;
             obj[ind]=req.body;
+            jsonfile.writeFile('./persistence/Novelas.json', obj, function(err) {
+                if (err) throw err;
+            });
             res.send(obj);
         }
         else{
+            res.statusCode=404;
             res.send('el id no existe');
         }
     });
@@ -61,6 +66,7 @@ router.get('/:id', function(req, res, next) {
             res.send(obj[ind]);
         }
         else{
+            res.statusCode=404;
             res.send('el id no existe');
         }
     });
@@ -78,9 +84,13 @@ router.delete('/:id', function(req, res, next) {
         });
         if(ids.includes(id)){
             obj.splice(ind,1);
+            jsonfile.writeFile('./persistence/Novelas.json', obj, function(err) {
+                if (err) throw err;
+            });
             res.send(obj);
         }
         else{
+            res.statusCode=404;
             res.send('el id no existe');
         }
     });
