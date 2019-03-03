@@ -183,6 +183,10 @@
 						"exec": [
 							"pm.test(\"response is ok\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"modifica el elemento\", function () {\r",
+							"    var obj= pm.response.json();\r",
+							"    pm.expect(obj.nombre).to.eql('SeCambioYaY');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -216,6 +220,45 @@
 					]
 				},
 				"description": "cambia el usuario con una ID especifica"
+			},
+			"response": []
+		},
+		{
+			"name": "Get erroneo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96cfdcb3-01d2-451d-b62c-e9964b63bae1",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/usuarios/9999999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios",
+						"9999999"
+					]
+				},
+				"description": "reviso que bote error cuando no existe la ID"
 			},
 			"response": []
 		}
