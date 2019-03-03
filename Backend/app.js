@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var novelasRouter= require('./routes/novelas');
 var usuariosRouter= require('./routes/usuarios');
 var autoresRouter= require('./routes/autores');
+var capitulosRouter= require('./routes/capitulos');
+
 var playlistsRouter= require('./routes/playlists');
 var recomendacionesRouter= require('./routes/recomendaciones');
 var app = express();
@@ -26,6 +28,8 @@ app.use('/', indexRouter);
 app.use('/novelas', novelasRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/autores', autoresRouter);
+app.use('/capitulos', capitulosRouter);
+
 app.use('/playlists', playlistsRouter);
 app.use('/recomendaciones', recomendacionesRouter);
 
