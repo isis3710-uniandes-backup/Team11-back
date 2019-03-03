@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8deb9fad-fe81-4e29-9205-9a20ae72d065",
+		"_postman_id": "c50a00b6-5753-462e-bf78-64ff4a979b68",
 		"name": "Novelas",
 		"description": "Pruebas GET, POST, PUT, DELETE de el recurso Novelas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -178,6 +178,201 @@
 					]
 				},
 				"description": "modifica una novela que existe"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT novela de id no existente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f83d71e9-bd21-4716-af93-602a6c2ad24e",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":9957952,\n    \"titulo\":\"titulo\",\n    \"tipo\":\"Web\",\n    \"descripcion\":\"descripcion\",\n    \"anio\":2017,\n    \"idioma\":\"español\",\n    \"autores\":[1,2],\n    \"tags\":[\"\",\"\"],\n    \"generos\":[1]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/Novelas/9957952",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Novelas",
+						"9957952"
+					]
+				},
+				"description": "modifica una novela que no existe"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE novela de id no existente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc15b6ec-9264-4334-bbf3-eefeead75338",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/Novelas/92775324",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Novelas",
+						"92775324"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE novela de id existente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc15b6ec-9264-4334-bbf3-eefeead75338",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/Novelas/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Novelas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET novela de id existente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "170d9f44-3c26-422f-886f-9c29d44dcaf9",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/Novelas/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Novelas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET novela de id no existente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "170d9f44-3c26-422f-886f-9c29d44dcaf9",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/Novelas/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Novelas",
+						"1"
+					]
+				}
 			},
 			"response": []
 		}

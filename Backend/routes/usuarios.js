@@ -14,7 +14,7 @@ router.post('/', function(req, res, next) {
     jsonfile.readFile('./persistence/Usuarios.json',(err,obj)=>{
         let ids= obj.map(el=>el.id);
         if(ids.includes(req.body.id)){
-            res.statusCode=400;
+            res.statusCode=400; 
             res.send('el id ya existe');
         }
         else{
@@ -43,7 +43,7 @@ router.put('/:id', function(req, res, next) {
             jsonfile.writeFile('./persistence/Usuarios.json', obj, function(err) {
                 if (err) throw err;
             });
-            res.send(obj);
+            res.send(obj[ind]);
         }
         else{
             res.statusCode=404;
