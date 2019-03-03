@@ -5,13 +5,13 @@ var jsonfile = require('jsonfile');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    jsonfile.readFile('./persistence/Categorias.json',(err,obj)=>{
+    jsonfile.readFile('./persistence/Generos.json',(err,obj)=>{
         res.send(obj);
     });
 });
 
 router.post('/', function(req, res, next) {
-    jsonfile.readFile('./persistence/Categorias.json',(err,obj)=>{
+    jsonfile.readFile('./persistence/Generos.json',(err,obj)=>{
         let ids= obj.map(el=>el.id);
         if(ids.includes(req.body.id)){
             res.statusCode=400;
@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
         }
         else{
             obj.push(req.body);
-            jsonfile.writeFile('./persistence/Categorias.json', obj, function(err) {
+            jsonfile.writeFile('./persistence/Generos.json', obj, function(err) {
                 if (err) throw err;
             });
             res.send(obj);
@@ -29,7 +29,7 @@ router.post('/', function(req, res, next) {
 
 router.put('/:id', function(req, res, next) {
     let id = parseInt(req.params.id);
-    jsonfile.readFile('./persistence/Categorias.json',(err,obj)=>{
+    jsonfile.readFile('./persistence/Generos.json',(err,obj)=>{
         var ind=-1;
         let ids= obj.map((el,index)=>{
             if(el.id===id){
@@ -40,7 +40,7 @@ router.put('/:id', function(req, res, next) {
         if(ids.includes(id)){
             obj.id=id;
             obj[ind]=req.body;
-            jsonfile.writeFile('./persistence/Categorias.json', obj, function(err) {
+            jsonfile.writeFile('./persistence/Generos.json', obj, function(err) {
                 if (err) throw err;
             });
             res.send(obj);
@@ -54,7 +54,7 @@ router.put('/:id', function(req, res, next) {
 
 router.get('/:id', function(req, res, next) {
     let id = parseInt(req.params.id);
-    jsonfile.readFile('./persistence/Categorias.json',(err,obj)=>{
+    jsonfile.readFile('./persistence/Generos.json',(err,obj)=>{
         var ind=-1;
         let ids= obj.map((el,index)=>{
             if(el.id===id){
@@ -74,7 +74,7 @@ router.get('/:id', function(req, res, next) {
 
 router.delete('/:id', function(req, res, next) {
     let id = parseInt(req.params.id);
-    jsonfile.readFile('./persistence/Categorias.json',(err,obj)=>{
+    jsonfile.readFile('./persistence/Generos.json',(err,obj)=>{
         var ind=-1;
         let ids= obj.map((el,index)=>{
             if(el.id===id){
@@ -84,7 +84,7 @@ router.delete('/:id', function(req, res, next) {
         });
         if(ids.includes(id)){
             obj.splice(ind,1);
-            jsonfile.writeFile('./persistence/Categorias.json', obj, function(err) {
+            jsonfile.writeFile('./persistence/Generos.json', obj, function(err) {
                 if (err) throw err;
             });
             res.send(obj);

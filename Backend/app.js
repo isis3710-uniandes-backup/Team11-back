@@ -8,14 +8,11 @@ var indexRouter = require('./routes/index');
 var novelasRouter= require('./routes/novelas');
 var usuariosRouter= require('./routes/usuarios');
 var autoresRouter= require('./routes/autores');
-<<<<<<< HEAD
 var fansubsRouter= require('./routes/fansubs');
 var generosRouter= require('./routes/generos');
 
-=======
 var playlistsRouter= require('./routes/playlists');
 //var recomendacionesRouter= require('./routes/recomendaciones');
->>>>>>> refs/remotes/origin/master
 var app = express();
 
 // view engine setup
@@ -32,13 +29,10 @@ app.use('/', indexRouter);
 app.use('/novelas', novelasRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/autores', autoresRouter);
-<<<<<<< HEAD
 app.use('/fansubs', fansubsRouter);
 app.use('/generos', generosRouter);
-=======
 app.use('/playlists', playlistsRouter);
 //app.use('/usuarios', recomendacionesRouter);
->>>>>>> refs/remotes/origin/master
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -6,9 +6,14 @@
     "novelas": [1, 2]
 },
 {
+    "id": 4,
+    "nombre": "Translation Noob",
+    "url": "https://translationnoob.blogspot.com/",
+    "novelas": []
+},
+{
     "id": 2,
-    "nombre": "Gravity Tales",
+    "nombre": "Wuxia",
     "url": "https://www.wuxiaworld.com/",
     "novelas": [3, 6]
-}
-]
+}]
