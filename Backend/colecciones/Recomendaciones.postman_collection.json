@@ -254,6 +254,136 @@
 				"description": "revisa si bota error al buscar ID inexistente"
 			},
 			"response": []
+		},
+		{
+			"name": "Post erroneo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed059a44-9834-4539-8d5b-0fb9fefd935d",
+						"exec": [
+							"pm.test(\"response is bad request\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nombreNovela\": \"novela1\",\r\n    \"idNovela\": 3\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/recomendaciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recomendaciones"
+					]
+				},
+				"description": "trata de crear una recomendacion existente"
+			},
+			"response": []
+		},
+		{
+			"name": "Put erroneo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ded8be4d-cf85-4ba9-b35c-e8d6777dd795",
+						"exec": [
+							"pm.test(\"response is not found\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 999999,\r\n    \"nombreNovela\": \"novela999999\",\r\n    \"idNovela\": 2\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/recomendaciones/999999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recomendaciones",
+						"999999"
+					]
+				},
+				"description": "trata de modificar una recomendacion inexsitente"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete erroneo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5842f93b-c7f6-4b27-9f7f-61e2d95e4914",
+						"exec": [
+							"pm.test(\"response is not found\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/recomendaciones/999999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recomendaciones",
+						"999999"
+					]
+				},
+				"description": "trata de borrar una recomendacion inexistente"
+			},
+			"response": []
 		}
 	]
 }
