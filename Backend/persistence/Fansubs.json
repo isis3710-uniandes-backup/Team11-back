@@ -1,0 +1,14 @@
+[
+{
+    "id": 1,
+    "nombre": "Gravity Tales",
+    "url": "http://gravitytales.com/",
+    "novelas": [1, 2]
+},
+{
+    "id": 2,
+    "nombre": "Gravity Tales",
+    "url": "https://www.wuxiaworld.com/",
+    "novelas": [3, 6]
+},
+]

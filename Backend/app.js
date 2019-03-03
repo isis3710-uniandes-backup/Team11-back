@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var novelasRouter= require('./routes/novelas');
 var usuariosRouter= require('./routes/usuarios');
 var autoresRouter= require('./routes/autores');
+var fansubsRouter= require('./routes/fansubs');
+var categoriasRouter= require('./routes/categorias');
 
 var app = express();
 
@@ -25,6 +27,8 @@ app.use('/', indexRouter);
 app.use('/novelas', novelasRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/autores', autoresRouter);
+app.use('/fansubs', fansubsRouter);
+app.use('/categorias', categoriasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

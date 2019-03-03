@@ -1,0 +1,12 @@
+[
+{
+    "id": 1,
+    "categoria": "Suspenso",
+    "novelas": [1, 2]
+},
+{
+    "id": 2,
+    "nombre": "Acción",
+    "novelas": [3, 6]
+},
+]
