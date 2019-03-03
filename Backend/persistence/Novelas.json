@@ -1,1 +1,17 @@
+<<<<<<< HEAD
 [{"id":1,"titulo":"Peerless Martial God 2","tipo":"Web","descripcion":"After the continent of the nine clouds, the continent of the gods, Lin Feng, a proud cultivator, journeys to exciting new worlds. There is more trouble on the horizon, will he be strong enough? See his journey…","anio":2019,"idioma":"chino","tags":["Arrogant Characters","Famous Protagonist","Male Protagonist"],"generos":[1,2,3],"autores":[1,2]},{"id":2,"titulo":"titulo","tipo":"Web","descripcion":"descripcion","anio":2017,"idioma":"español","autores":[1,2],"tags":["",""],"generos":[1]}]
+=======
+[
+{
+    "id": 1,
+    "titulo": "Peerless Martial God 2",
+    "tipo": "Web",
+    "descripcion": "After the continent of the nine clouds, the continent of the gods, Lin Feng, a proud cultivator, journeys to exciting new worlds. There is more trouble on the horizon, will he be strong enough? See his journey…",
+    "anio": 2019,
+    "idioma": "chino",
+    "tags": ["Arrogant Characters", "Famous Protagonist", "Male Protagonist"],
+    "generos": [1, 2, 3],
+    "autores": [1, 2]
+}
+]
+>>>>>>> 53c9116903f77ded42f2108e0b0fb50b15908c2d
