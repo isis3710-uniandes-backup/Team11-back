@@ -18,4 +18,4 @@ La idea de este proyecto es implementar una plataforma que recopile estas traduc
 
 # Para despliegue de la aplicación:
 
-ejecutar comando npm start. (es necesario tener nodemon instalado)
+ejecutar comando npm start en la carpeta Backend. (es necesario tener nodemon instalado)
