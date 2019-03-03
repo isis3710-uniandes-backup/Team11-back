@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "bdce9f1c-50b3-42fd-b756-1bf5c37ed8ba",
+		"name": "Recomendaciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get recomendaciones",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "21ed8f29-764d-45c2-baf3-8f5b576a0ad6",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/recomendaciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recomendaciones"
+					]
+				},
+				"description": "da todas las recomendaciones"
+			},
+			"response": []
+		},
+		{
+			"name": "Get recomendacion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6f2a3a06-5530-471b-b856-3a7a136f4bcf",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/recomendaciones/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recomendaciones",
+						"1"
+					]
+				},
+				"description": "da una recomendacion por ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Post de recomendaciones",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d16f3ac9-f4d3-4894-bef5-260771887dd2",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 15,\r\n    \"nombreNovela\": \"novela15\",\r\n    \"idNovela\": 2\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/recomendaciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recomendaciones"
+					]
+				},
+				"description": "crea una recomendacion"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete recomendacion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd64a2fe-344e-46af-86fc-cd74c3b80364",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/recomendaciones/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recomendaciones",
+						"15"
+					]
+				},
+				"description": "borra una recomendacion por ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Put de una recomendacion ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b4c54fd6-d41c-47f0-b517-6c8d9d939b50",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"modifica el elemento\", function () {\r",
+							"    var obj= pm.response.json();\r",
+							"    pm.expect(obj.tipo).to.eql('Web');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nombreNovela\": \"novela11111111\",\r\n    \"idNovela\": 3\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/recomendaciones/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recomendaciones",
+						"1"
+					]
+				},
+				"description": "modifica una recomendacion por ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Get erroneo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1b906bf7-e5f3-4da8-8b6e-bf38614d34b9",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/recomendaciones/999999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recomendaciones",
+						"999999"
+					]
+				},
+				"description": "revisa si bota error al buscar ID inexistente"
+			},
+			"response": []
+		}
+	]
+}
