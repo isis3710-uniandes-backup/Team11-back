@@ -7,7 +7,7 @@ Este repositorio esta dedicado al desarrollo del proyecto del equipo de trabajo 
 <ul>
   <li>Gabriel Martínez Zarama  - código estudiante: 201227890</li>
   <li>Amilkar Eslava Galvis    - código estudiante: 201611332</li>
-  <li>Rafael Tejon Rojas       - código estudiante: 201</li>
+  <li>Rafael Tejón Rojas       - código estudiante: 201617853</li>
 </ul>
 
 El proyecto de este equipo se centra en el tema a continuación:
