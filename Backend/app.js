@@ -7,9 +7,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var novelasRouter= require('./routes/novelas');
 var usuariosRouter= require('./routes/usuarios');
+var autoresRouter= require('./routes/autores');
 var playlistsRouter= require('./routes/playlists');
 //var recomendacionesRouter= require('./routes/recomendaciones');
-
 var app = express();
 
 // view engine setup
@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/novelas', novelasRouter);
 app.use('/usuarios', usuariosRouter);
+app.use('/autores', autoresRouter);
 app.use('/playlists', playlistsRouter);
 //app.use('/usuarios', recomendacionesRouter);
 
