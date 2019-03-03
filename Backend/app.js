@@ -10,6 +10,8 @@ var usuariosRouter= require('./routes/usuarios');
 var autoresRouter= require('./routes/autores');
 var capitulosRouter= require('./routes/capitulos');
 
+var playlistsRouter= require('./routes/playlists');
+//var recomendacionesRouter= require('./routes/recomendaciones');
 var app = express();
 
 // view engine setup
@@ -28,6 +30,8 @@ app.use('/usuarios', usuariosRouter);
 app.use('/autores', autoresRouter);
 app.use('/capitulos', capitulosRouter);
 
+app.use('/playlists', playlistsRouter);
+//app.use('/usuarios', recomendacionesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
