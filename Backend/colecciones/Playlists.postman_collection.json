@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "1b92f823-80fb-4bbe-8cd4-2aab7e9a3f71",
+		"name": "Playlists",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get playlists",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5508681-f34a-4f02-9b1f-d61a44efcbbc",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/playlists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlists"
+					]
+				},
+				"description": "muestra toda las playlists"
+			},
+			"response": []
+		},
+		{
+			"name": "Get de una playlist especifica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5af8ceab-9da2-4d39-b9b4-573fd32a5552",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/playlists/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlists",
+						"1"
+					]
+				},
+				"description": "muestra una playlist por su ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Post de una playlist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b73df765-1747-4eef-b4c0-ff309935e4e6",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 15,\r\n    \"titulo\": \"playlist15\",\r\n    \"tipo\": \"0\",\r\n    \"descripcion\": \"listalista\",\r\n    \"anioCreacion\": 2019\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/playlists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlists"
+					]
+				},
+				"description": "crea una playlist"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete de una playlist ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ba90ffbf-a21a-45ef-bca7-12e884c1bdd8",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/playlists/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlists",
+						"15"
+					]
+				},
+				"description": "se borra una playlist por ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Put de una playlist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed6a2baa-5ed9-4547-a251-7899ac5f9cce",
+						"exec": [
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"modifica el elemento\", function () {\r",
+							"    var obj= pm.response.json();\r",
+							"    pm.expect(obj.tipo).to.eql('Web');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"titulo\": \"playlist11111111111111\",\r\n    \"tipo\": \"0\",\r\n    \"descripcion\": \"listalista\",\r\n    \"anioCreacion\": 2019\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/playlists/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlists",
+						"1"
+					]
+				},
+				"description": "cambia una playlist por ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Get erroneo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "72849b9c-c0e6-4f8a-b3fc-ec701b8bb0a6",
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/playlists/999999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlists",
+						"999999"
+					]
+				},
+				"description": "reviso que bote error cuando no existe una ID"
+			},
+			"response": []
+		}
+	]
+}
