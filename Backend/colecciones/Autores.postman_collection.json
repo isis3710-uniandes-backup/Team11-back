@@ -6,7 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Autores GET",
 			"name": "GET de todos los autores",
 			"event": [
 				{
@@ -44,7 +43,6 @@
 			"response": []
 		},
 		{
-			"name": "Autores POST",
 			"name": "GET de un autor especifico",
 			"event": [
 				{
@@ -169,16 +167,6 @@
 			"response": []
 		},
 		{
-			"name": "Autores DELETE",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "localhost:3000/Autores/3",
 			"name": "POST agrega un autor existente",
 			"event": [
 				{
@@ -215,11 +203,6 @@
 					],
 					"port": "3000",
 					"path": [
-						"Autores",
-						"3"
-					]
-				},
-				"description": "Borra al autor con id 1"
 						"Autores"
 					]
 				},
@@ -228,7 +211,6 @@
 			"response": []
 		},
 		{
-			"name": "Autores PUT",
 			"name": "PUT cambia un autor existente",
 			"event": [
 				{
@@ -265,10 +247,6 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\":3,\n\t\"nombre\": \"Cola\",\n\t\"idioma\": \"Japon\",\n\t\"novelas\": [4]\n}"
-				},
-				"url": {
-					"raw": "localhost:3000/autores/3",
 					"raw": "{\n\t\"id\":5,\n\t\"nombre\": \"Cola\",\n\t\"idioma\": \"Japon\",\n\t\"novelas\": [4]\n}"
 				},
 				"url": {
@@ -279,10 +257,6 @@
 					"port": "3000",
 					"path": [
 						"autores",
-						"3"
-					]
-				},
-				"description": "Cambia nombre del el autor con id 2 a Cola"
 						"5"
 					]
 				},
@@ -291,9 +265,6 @@
 			"response": []
 		},
 		{
-			"name": "Autores GET 1",
-			"request": {
-				"method": "GET",
 			"name": "PUT cambia un autor que no existe",
 			"event": [
 				{
@@ -363,18 +334,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/autores/1",
 					"raw": "localhost:3000/Autores/5",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"autores",
-						"1"
-					]
-				},
-				"description": "Consigue un solo autor por id"
 						"Autores",
 						"5"
 					]
