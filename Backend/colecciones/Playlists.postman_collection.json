@@ -254,6 +254,136 @@
 				"description": "reviso que bote error cuando no existe una ID"
 			},
 			"response": []
+		},
+		{
+			"name": "Post erroneo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "01ab4352-f50c-43e8-a040-750221056fbd",
+						"exec": [
+							"pm.test(\"response is bad request\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"titulo\": \"playlist1\",\r\n    \"tipo\": 0,\r\n    \"descripcion\": \"listalista\",\r\n    \"anioCreacion\": 2019\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/playlists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlists"
+					]
+				},
+				"description": "trata de crear una playlist que ya existe y bota 400"
+			},
+			"response": []
+		},
+		{
+			"name": "Put erroneo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a9879570-3f61-43a5-a90b-2c48a8ab6875",
+						"exec": [
+							"pm.test(\"response is not found\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 999999,\r\n    \"titulo\": \"inexistente\",\r\n    \"tipo\": 0,\r\n    \"descripcion\": \"listalista\",\r\n    \"anioCreacion\": 2019\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/playlists/999999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlists",
+						"999999"
+					]
+				},
+				"description": "trata de modificar una playlist inexistente"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete erroneo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6715ccce-a8cd-4b85-adac-31427ec84b25",
+						"exec": [
+							"pm.test(\"response is bad request\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/playlists/999999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlists",
+						"999999"
+					]
+				},
+				"description": "trata de borar una playlist que no existe"
+			},
+			"response": []
 		}
 	]
 }
