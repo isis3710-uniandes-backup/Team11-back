@@ -1,8 +1,1 @@
-[
-    {
-        "id":1,
-        "novela":1,
-        "estrellas":4.5,
-        "comentario":"Lorem ip   sum dolor sit amet, consectetur adipiscing elit. Duis porta sapien sodales tempus lacinia. Mauris mi quam, sollicitudin ullamcorper magna vel, consectetur finibus mauris. "
-    }
-]
+[{"id":1,"novela":1,"estrellas":4.5,"comentario":"Lorem ip   sum dolor sit amet, consectetur adipiscing elit. Duis porta sapien sodales tempus lacinia. Mauris mi quam, sollicitudin ullamcorper magna vel, consectetur finibus mauris. "}]

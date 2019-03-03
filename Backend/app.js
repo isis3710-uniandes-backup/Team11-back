@@ -11,7 +11,7 @@ var autoresRouter= require('./routes/autores');
 var fansubsRouter= require('./routes/fansubs');
 var generosRouter= require('./routes/generos');
 var capitulosRouter= require('./routes/capitulos');
-
+var comentariosRouter= require('./routes/comentarios');
 var playlistsRouter= require('./routes/playlists');
 var recomendacionesRouter= require('./routes/recomendaciones');
 var app = express();
@@ -33,6 +33,7 @@ app.use('/autores', autoresRouter);
 app.use('/fansubs', fansubsRouter);
 app.use('/generos', generosRouter);
 app.use('/capitulos', capitulosRouter);
+app.use('/comentarios', comentariosRouter);
 app.use('/playlists', playlistsRouter);
 app.use('/recomendaciones', recomendacionesRouter);
 
