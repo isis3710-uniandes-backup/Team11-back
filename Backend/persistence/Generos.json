@@ -15,3 +15,4 @@
     "novelas": [3, 6]
 }
 ]
+[{"id":1,"genero":"Suspenso","novelas":[1,2]},{"id":2,"genero":"Acción","novelas":[3,6]},{"id":7,"genero":"Maduro","novelas":[5,10]}]

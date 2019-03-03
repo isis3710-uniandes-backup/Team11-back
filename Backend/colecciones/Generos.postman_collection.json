@@ -1,27 +1,12 @@
 {
 	"info": {
-		"_postman_id": "9959b4a8-375a-4897-9ce3-4d98d0ee884d",
-		"name": "Autores",
+		"_postman_id": "e124242c-60c4-4b43-ba57-69bba381b2b0",
+		"name": "Generos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Autores GET",
-			"name": "GET de todos los autores",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "70b2c2f7-ff65-48ab-b988-24247df538db",
-						"exec": [
-							"pm.test(\"response is ok\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
+			"name": "Generos GET",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -30,34 +15,33 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/Autores",
+					"raw": "localhost:3000/generos",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"Autores"
+						"generos"
 					]
 				},
-				"description": "Consigue una lista con todos los autores"
+				"description": "Consigue todos los generos"
 			},
 			"response": []
 		},
 		{
-			"name": "Autores POST",
-			"name": "GET de un autor especifico",
+			"name": "GET de un genero especifico",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "c481a88e-02d1-4060-af7e-30e8c8b66fa2",
+						"id": "4ab1f169-cd91-493b-adff-518214d23530",
 						"exec": [
 							"pm.test(\"response is ok\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"modifica el elemento\", function () {\r",
+							"pm.test(\"Se obtuvo el elemento correcto\", function () {\r",
 							"    var obj= pm.response.json();\r",
-							"    pm.expect(obj.nombre).to.eql('Du Wei Qu');\r",
+							"    pm.expect(obj.genero).to.eql('Acción');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -72,29 +56,29 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/autores/1",
+					"raw": "localhost:3000/generos/2",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"autores",
-						"1"
+						"generos",
+						"2"
 					]
 				},
-				"description": "Consigue un solo autor por id"
+				"description": "Develve un genero especifico dada la id=1"
 			},
 			"response": []
 		},
 		{
-			"name": "GET de un autor especifico que no existe",
+			"name": "GET de un genero inexistente",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "4ea188f1-026d-4385-ac7f-d1a1634b08f4",
+						"id": "4ab1f169-cd91-493b-adff-518214d23530",
 						"exec": [
-							"pm.test(\"response is ok\", function () {\r",
+							"pm.test(\"response is bad request\", function () {\r",
 							"    pm.response.to.have.status(404);\r",
 							"});"
 						],
@@ -110,27 +94,27 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/autores/10",
+					"raw": "localhost:3000/generos/5",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"autores",
-						"10"
+						"generos",
+						"5"
 					]
 				},
-				"description": "Consigue un solo autor por id"
+				"description": "Intenta conseguir un genero por id=5 pero no existe, recibe mensaje error"
 			},
 			"response": []
 		},
 		{
-			"name": "POST agrega un autor nuevo",
+			"name": "POST agruea generor id 4",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "0735c6e5-65c0-4c70-8830-0ea82b19ca1f",
+						"id": "ef135773-dc10-45fa-b191-180272acca2d",
 						"exec": [
 							"pm.test(\"response is ok\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -152,39 +136,29 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\":5,\n\t\"nombre\": \"PruebaPost\",\n\t\"idioma\": \"Chibchombia\",\n\t\"novelas\": [7]\n}"
+					"raw": "{\r\n    \"id\": 4,\r\n    \"genero\": \"Terror\",\r\n    \"novelas\": [5, 10]\r\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/Autores",
+					"raw": "localhost:3000/generos",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"Autores"
+						"generos"
 					]
 				},
-				"description": "Agrega a un autor con id 5"
+				"description": "Agrega un genero llamado Terror con id 4"
 			},
 			"response": []
 		},
 		{
-			"name": "Autores DELETE",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "localhost:3000/Autores/3",
-			"name": "POST agrega un autor existente",
+			"name": "POST agruea genero id 2 ya existe ",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "efe57d2f-5c14-4481-a929-a2107f7fdb6d",
+						"id": "ef135773-dc10-45fa-b191-180272acca2d",
 						"exec": [
 							"pm.test(\"response is bad request\", function () {\r",
 							"    pm.response.to.have.status(400);\r",
@@ -206,47 +180,36 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\":1,\n\t\"nombre\": \"PruebaPost\",\n\t\"idioma\": \"Chibchombia\",\n\t\"novelas\": [7]\n}"
+					"raw": "{\r\n    \"id\": 2,\r\n    \"genero\": \"Terror\",\r\n    \"novelas\": [5, 10]\r\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/Autores",
+					"raw": "localhost:3000/generos",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"Autores",
-						"3"
+						"generos"
 					]
 				},
-				"description": "Borra al autor con id 1"
-						"Autores"
-					]
-				},
-				"description": "Agrega a un autor con id 5"
+				"description": "Agrega un genero llamado Terror con id 2, pero no puede dado que ya existe"
 			},
 			"response": []
 		},
 		{
-			"name": "Autores PUT",
-			"name": "PUT cambia un autor existente",
+			"name": "PUT cambia genero con id 4",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "f161dbc7-b833-4142-a52c-9246687169cb",
+						"id": "3e8be9f9-ae56-4c45-893b-85145535cf27",
 						"exec": [
 							"pm.test(\"response is ok\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"\r",
 							"pm.test(\"modifica el elemento\", function () {\r",
 							"    var obj= pm.response.json();\r",
-							"    pm.expect(obj.nombre).to.eql('Cola');\r",
-							"});\r",
-							"pm.test(\"modifica el elemento\", function () {\r",
-							"    var obj= pm.response.json();\r",
-							"    pm.expect(obj.idioma).to.eql('Japon');\r",
+							"    pm.expect(obj.genero).to.eql('Maduro');\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -265,45 +228,35 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\":3,\n\t\"nombre\": \"Cola\",\n\t\"idioma\": \"Japon\",\n\t\"novelas\": [4]\n}"
+					"raw": "{\r\n    \"id\": 4,\r\n    \"genero\": \"Maduro\",\r\n    \"novelas\": [5, 10]\r\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/autores/3",
-					"raw": "{\n\t\"id\":5,\n\t\"nombre\": \"Cola\",\n\t\"idioma\": \"Japon\",\n\t\"novelas\": [4]\n}"
-				},
-				"url": {
-					"raw": "localhost:3000/autores/5",
+					"raw": "localhost:3000/generos/4",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"autores",
-						"3"
+						"generos",
+						"4"
 					]
 				},
-				"description": "Cambia nombre del el autor con id 2 a Cola"
-						"5"
-					]
-				},
-				"description": "Cambia nombre del el autor con id 5 a Cola"
+				"description": "Cambia el nombre del genero con id 4 de Terror a Maduro"
 			},
 			"response": []
 		},
 		{
-			"name": "Autores GET 1",
-			"request": {
-				"method": "GET",
-			"name": "PUT cambia un autor que no existe",
+			"name": "PUT cambia genero a un id inexistente",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "1a480005-980d-433f-82e1-a4bd4b0ecaef",
+						"id": "3e8be9f9-ae56-4c45-893b-85145535cf27",
 						"exec": [
-							"pm.test(\"response is ok\", function () {\r",
+							"pm.test(\"response is a bad request\", function () {\r",
 							"    pm.response.to.have.status(404);\r",
-							"});"
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -315,36 +268,36 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\":30,\n\t\"nombre\": \"Cola\",\n\t\"idioma\": \"Japon\",\n\t\"novelas\": [4]\n}"
+					"raw": "{\r\n    \"id\": 7,\r\n    \"genero\": \"Maduro\",\r\n    \"novelas\": [5, 10]\r\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/autores/30",
+					"raw": "localhost:3000/generos/9",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"autores",
-						"30"
+						"generos",
+						"9"
 					]
 				},
-				"description": "Cambia nombre del el autor con id 30 a Cola"
+				"description": "Cambia el nombre del genero con id 9, pero no existe por ello recibe mensaje de error"
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE elimina un autor existente",
+			"name": "DELETE un genero con id 4",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "11b63a2b-e7d1-4f13-9e26-2bd24ae7fb0d",
+						"id": "16309435-64d8-448d-a976-18e02c5ff0d2",
 						"exec": [
 							"pm.test(\"response is ok\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -363,37 +316,32 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/autores/1",
-					"raw": "localhost:3000/Autores/5",
+					"raw": "localhost:3000/generos/4",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"autores",
-						"1"
+						"generos",
+						"4"
 					]
 				},
-				"description": "Consigue un solo autor por id"
-						"Autores",
-						"5"
-					]
-				},
-				"description": "Borra al autor con id 1"
+				"description": "Borra el genero con id 4"
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE elimina un autor que no existe",
+			"name": "DELETE un genero con id 8",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "2fddcaf1-afdd-4ab0-bed9-93b7bc37519e",
+						"id": "16309435-64d8-448d-a976-18e02c5ff0d2",
 						"exec": [
-							"pm.test(\"response is bad\", function () {\r",
+							"pm.test(\"response is bad request\", function () {\r",
 							"    pm.response.to.have.status(404);\r",
-							"});"
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -407,17 +355,17 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/Autores/33",
+					"raw": "localhost:3000/generos/8",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"Autores",
-						"33"
+						"generos",
+						"8"
 					]
 				},
-				"description": "Borra al autor con id 1"
+				"description": "Borra el genero con id 8 que no existe y por ello no puede"
 			},
 			"response": []
 		}

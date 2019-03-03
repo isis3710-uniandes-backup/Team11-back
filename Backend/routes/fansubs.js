@@ -44,6 +44,7 @@ router.put('/:id', function(req, res, next) {
                 if (err) throw err;
             });
             res.send(obj);
+            res.send(obj[ind]);
         }
         else{
             res.statusCode=404;
