@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var novelasRouter= require('./routes/novelas');
 var usuariosRouter= require('./routes/usuarios');
 var autoresRouter= require('./routes/autores');
+var fansubsRouter= require('./routes/fansubs');
+var generosRouter= require('./routes/generos');
 var capitulosRouter= require('./routes/capitulos');
 
 var playlistsRouter= require('./routes/playlists');
@@ -28,8 +30,9 @@ app.use('/', indexRouter);
 app.use('/novelas', novelasRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/autores', autoresRouter);
+app.use('/fansubs', fansubsRouter);
+app.use('/generos', generosRouter);
 app.use('/capitulos', capitulosRouter);
-
 app.use('/playlists', playlistsRouter);
 app.use('/recomendaciones', recomendacionesRouter);
 
