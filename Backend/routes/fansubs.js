@@ -43,6 +43,7 @@ router.put('/:id', function(req, res, next) {
             jsonfile.writeFile('./persistence/Fansubs.json', obj, function(err) {
                 if (err) throw err;
             });
+            res.send(obj);
             res.send(obj[ind]);
         }
         else{
