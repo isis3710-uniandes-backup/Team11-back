@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "9959b4a8-375a-4897-9ce3-4d98d0ee884d",
+		"name": "Autores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autores GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/Autores",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Autores"
+					]
+				},
+				"description": "Consigue una lista con todos los autores"
+			},
+			"response": []
+		},
+		{
+			"name": "Autores POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":5,\n\t\"nombre\": \"PruebaPost\",\n\t\"idioma\": \"Chibchombia\",\n\t\"novelas\": [7]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/Autores",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Autores"
+					]
+				},
+				"description": "Agrega a un autor con id 5"
+			},
+			"response": []
+		},
+		{
+			"name": "Autores DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/Autores/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Autores",
+						"3"
+					]
+				},
+				"description": "Borra al autor con id 1"
+			},
+			"response": []
+		},
+		{
+			"name": "Autores PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":3,\n\t\"nombre\": \"Cola\",\n\t\"idioma\": \"Japon\",\n\t\"novelas\": [4]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/autores/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"autores",
+						"3"
+					]
+				},
+				"description": "Cambia nombre del el autor con id 2 a Cola"
+			},
+			"response": []
+		},
+		{
+			"name": "Autores GET 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/autores/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"autores",
+						"1"
+					]
+				},
+				"description": "Consigue un solo autor por id"
+			},
+			"response": []
+		}
+	]
+}

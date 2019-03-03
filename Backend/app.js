@@ -29,7 +29,6 @@ app.use('/novelas', novelasRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/autores', autoresRouter);
 app.use('/capitulos', capitulosRouter);
-
 app.use('/playlists', playlistsRouter);
 app.use('/recomendaciones', recomendacionesRouter);
 
