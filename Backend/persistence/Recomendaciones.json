@@ -1,1 +1,6 @@
-[{"id":1,"nombreNovela":"novela11111111","idNovela":3}]
+[
+{
+    "id": 1,
+    "nombreNovela": "novela1",
+    "idNovela": 1
+}]

@@ -24,7 +24,7 @@ router.post('/', function(req, res, next) {
             });
             res.send(obj);
         }
-    });
+    }); 
 });
 
 router.put('/:id', function(req, res, next) {
