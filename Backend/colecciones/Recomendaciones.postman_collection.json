@@ -179,7 +179,7 @@
 							"});\r",
 							"pm.test(\"modifica el elemento\", function () {\r",
 							"    var obj= pm.response.json();\r",
-							"    pm.expect(obj.tipo).to.eql('Web');\r",
+							"    pm.expect(obj.idNovela).to.eql(3);\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -198,7 +198,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1,\r\n    \"nombreNovela\": \"novela11111111\",\r\n    \"idNovela\": 3\r\n}"
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nombreNovela\": \"novela1\",\r\n    \"idNovela\": 3\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/recomendaciones/1",
