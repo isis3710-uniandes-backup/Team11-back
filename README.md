@@ -6,7 +6,7 @@ Este repositorio esta dedicado al desarrollo del proyecto del equipo de trabajo 
 (ISIS-3710) de la universidad de los Andes. El equipo es conformado por: 
 <ul>
   <li>Gabriel Martínez Zarama  - código estudiante: 201227890</li>
-  <li>Amilkar Eslava Galvis    - código estudiante: 201</li>
+  <li>Amilkar Eslava Galvis    - código estudiante: 201611332</li>
   <li>Rafael Tejon Rojas       - código estudiante: 201</li>
 </ul>
 
