@@ -6,7 +6,6 @@ var jsonfile = require('jsonfile');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     jsonfile.readFile('./persistence/Comentarios.json',(err,obj)=>{
-        console.log(obj);
         res.send(obj);
     });
 });

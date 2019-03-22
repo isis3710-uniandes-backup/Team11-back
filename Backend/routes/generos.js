@@ -43,7 +43,6 @@ router.put('/:id', function(req, res, next) {
             jsonfile.writeFile('./persistence/Generos.json', obj, function(err) {
                 if (err) throw err;
             });
-            res.send(obj);
             res.send(obj[ind]);
         }
         else{
