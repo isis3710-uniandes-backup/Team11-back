@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar'
 import Novelas from './Novelas'
-import SeriesPopulares from './SeriesPop'
 import Faq from './faq'
 import Contactenos from './contactenos';
-
+import SeriesPops from './SeriesPops';
 
 class Vista extends Component {
     constructor(props) {
@@ -19,10 +18,12 @@ class Vista extends Component {
     }
 
     toNovelas() {
+        console.log('novelas')
         this.setState({ Vista: 'Novelas' })
     }
 
     toSeriesPopulares() {
+        console.log('seriesPop')
         this.setState({ Vista: 'SeriesPop' })
     }
 
@@ -41,7 +42,7 @@ class Vista extends Component {
                 return (
                     <div>
                         {nav}
-                        <Novelas />
+                        <Novelas/>
                     </div>
                 );
 
@@ -49,7 +50,7 @@ class Vista extends Component {
                 return (
                     <div>
                         {nav}
-                        <SeriesPopulares />
+                        <SeriesPops/>
                     </div>
                 );
 
