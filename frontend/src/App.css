@@ -46,3 +46,48 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+#parte4{
+	background-color: rgb(238, 238, 238);
+}
+#img1{
+	width: auto;
+	height: 300px;
+}
+#foot {		
+ 	padding: 0px;	
+}
+#foot a {
+  color: #70726F;
+  font-size: 20px;
+  padding: 10px;
+  transition: all .5s ease;
+}
+#foot a:hover {
+  color: white;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+#parte2{
+	background-color: rgb(238, 238, 238);
+}
+#img2{
+	height: 280px;
+}
+div[my-text2*=try]{
+	padding-top: 10px;
+	color: rgb(102, 119, 136);
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
