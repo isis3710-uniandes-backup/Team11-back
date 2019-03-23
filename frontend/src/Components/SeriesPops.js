@@ -12,12 +12,11 @@ class SeriesPops extends Novelas {
         axios.get('http://localhost:3001/Novelas')
             .then((response) => {
                 var state = this.state;
-                var b = response.data;
-                console.log(this.props.ranked)
-                b.sort((a, b) => b.ranking - a.ranking);
-                console.log('sad')
-
-                state.novelas = b;
+                var novelas = response.data;
+                novelas.sort((a, b) => b.ranking - a.ranking);
+                state.pagina = 0;
+                // pueden cambiar el tamaño de partion aca
+                state.tablasNovela = this.getTablasNovela(novelas,5);
                 return state;
             })
             .then((newState) => {

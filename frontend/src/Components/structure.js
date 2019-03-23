@@ -18,12 +18,10 @@ class Vista extends Component {
     }
 
     toNovelas() {
-        console.log('novelas')
         this.setState({ Vista: 'Novelas' })
     }
 
     toSeriesPopulares() {
-        console.log('seriesPop')
         this.setState({ Vista: 'SeriesPop' })
     }
 
