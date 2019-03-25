@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Novela from './Novela';
 const axios = require('axios');
 //const getNovelas;

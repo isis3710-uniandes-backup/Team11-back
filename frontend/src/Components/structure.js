@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar'
-import Novelas from './Novelas'
-import Faq from './faq'
-import Contactenos from './contactenos';
-import SeriesPops from './SeriesPops';
+import Navbar from './NavBar/Navbar'
+import Novelas from './Novelas/Novelas'
+import Faq from './AboutUs/faq'
+import Contactenos from './AboutUs/contactenos';
+import SeriesPops from './Series/SeriesPops';
+import Home from './Home/Home'
 
 class Vista extends Component {
     constructor(props) {
         super(props);
-        this.state = { Vista: 'Ini' }
+        this.state = { Vista: 'Home' }
 
         this.toNovelas = this.toNovelas.bind(this);
         this.toSeriesPopulares = this.toSeriesPopulares.bind(this);
         this.toFaq = this.toFaq.bind(this);
         this.toContactenos = this.toContactenos.bind(this);
 
+    }
+
+    toHome=()=>{
+        this.setState({Vista:'Home'});
     }
 
     toNovelas() {
@@ -34,7 +39,7 @@ class Vista extends Component {
     }
 
     render() {
-        let nav = <Navbar novela={this.toNovelas} series={this.toSeriesPopulares} faq={this.toFaq} contactenos={this.toContactenos} />
+        let nav = <Navbar home={this.toHome} novela={this.toNovelas} series={this.toSeriesPopulares} faq={this.toFaq} contactenos={this.toContactenos} />
         switch (this.state.Vista) {
             case "Novelas":
                 return (
@@ -60,13 +65,20 @@ class Vista extends Component {
                     </div>
                 );
 
-                case 'Contactenos':
-                return (
-                    <div>
-                        {nav}
-                        <Contactenos />
-                    </div>
-                );
+            case 'Contactenos':
+            return (
+                <div>
+                    {nav}
+                    <Contactenos />
+                </div>
+            );
+            case 'Home':
+            return (
+                <div>
+                    {nav}
+                    <Home />
+                </div>
+            );
             default:
                 return (
                     <div>
