@@ -5,6 +5,7 @@ import Faq from './AboutUs/faq'
 import Contactenos from './AboutUs/contactenos';
 import SeriesPops from './Series/SeriesPops';
 import Home from './Home/Home'
+import Perfil from './Usuario/Perfil'
 
 class Vista extends Component {
     constructor(props) {
@@ -20,6 +21,10 @@ class Vista extends Component {
 
     toHome=()=>{
         this.setState({Vista:'Home'});
+    }
+
+    toPerfil=()=>{
+        this.setState({Vista:'Perfil'});
     }
 
     toNovelas() {
@@ -39,7 +44,7 @@ class Vista extends Component {
     }
 
     render() {
-        let nav = <Navbar home={this.toHome} novela={this.toNovelas} series={this.toSeriesPopulares} faq={this.toFaq} contactenos={this.toContactenos} />
+        let nav = <Navbar perfil={this.toPerfil} home={this.toHome} novela={this.toNovelas} series={this.toSeriesPopulares} faq={this.toFaq} contactenos={this.toContactenos} />
         switch (this.state.Vista) {
             case "Novelas":
                 return (
@@ -79,7 +84,15 @@ class Vista extends Component {
                     <Home />
                 </div>
             );
+            case 'Perfil':
+            return (
+                <div>
+                    {nav}
+                    <Perfil />
+                </div>
+            );
             default:
+                console.log(this.state.Vista);
                 return (
                     <div>
                         {nav}

@@ -1,1 +1,9 @@
-[{"id":1,"titulo":"playlist111","tipo":1,"descripcion":"listalista","anioCreacion":2019}]
+[
+    {
+        "id":1,"titulo":"playlist111",
+        "tipo":1,
+        "descripcion":"listalista",
+        "anioCreacion":2019,
+        "novelas":[1,6,7,12]
+    }
+]

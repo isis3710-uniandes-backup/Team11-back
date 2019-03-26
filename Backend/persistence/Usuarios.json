@@ -1,1 +1,30 @@
-[{"id":1,"nombre":"SeCambioYaY","playlists":["1","2","3"],"recomendaciones":["recomendacion1","recomendacion2","recomendacion3"]}]
+[
+    {
+        "id":1,
+        "nombre":"SeCambioYaY",
+        "playlists":[1,2,3],
+        "recomendaciones":[1,2,3],
+        "favoritos":[1,4,6,8]
+    },
+    {
+        "id":2,
+        "nombre":"SeCambioYaY",
+        "playlists":[2,3],
+        "recomendaciones":[1,2],
+        "favoritos":[1,4,6,8]
+    },
+    {
+        "id":3,
+        "nombre":"SeCambioYaY",
+        "playlists":[1,2],
+        "recomendaciones":[1,3],
+        "favoritos":[1,4,6,8]
+    },
+    {
+        "id":4,
+        "nombre":"SeCambioYaY",
+        "playlists":[1,3],
+        "recomendaciones":[1,2],
+        "favoritos":[1,4,6,8]
+    }
+]
