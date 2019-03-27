@@ -46,6 +46,16 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+#titulo, #perfilPequeño {
+  cursor: pointer;
+}
+
+
+.navbar {
+  background-color:#dddddd !important;
+  background-image: none;
+  background-repeat: no-repeat;
+ }
 
 #parte4{
 	background-color: rgb(238, 238, 238);
