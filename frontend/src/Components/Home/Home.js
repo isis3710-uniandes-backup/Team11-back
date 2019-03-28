@@ -1,6 +1,6 @@
 import React from 'react';
 import Publicacion from './Publicacion';
-const axios = require('axios');
+import axios from 'axios'
 //const getNovelas;
 class Home extends React.Component {
     constructor(props) {

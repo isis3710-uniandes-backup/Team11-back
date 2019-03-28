@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-const axios = require('axios');
+import axios from 'axios'
 
 class Publicacion extends Component {
 

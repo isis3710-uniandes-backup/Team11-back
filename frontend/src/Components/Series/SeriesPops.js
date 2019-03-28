@@ -1,6 +1,6 @@
 import React from 'react';
 import Novelas from '../Novelas/Novelas';
-const axios = require('axios');
+import axios from 'axios'
 
 //const getNovelas;
 class SeriesPops extends Novelas {

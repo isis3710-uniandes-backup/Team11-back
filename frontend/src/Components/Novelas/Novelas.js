@@ -1,6 +1,6 @@
 import React from 'react';
 import Novela from './Novela';
-const axios = require('axios');
+import axios from 'axios'
 class Novelas extends React.Component {
     constructor(props) {
         super(props);

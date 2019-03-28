@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import perfilImage from '../../assets/img/user.png'
-const axios = require('axios');
+import axios from 'axios'
 
 class Perfil extends Component {
 

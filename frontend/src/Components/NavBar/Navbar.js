@@ -1,8 +1,9 @@
 import React from 'react';
+import {Link} from 'react-router'
 
 const Navbar = (props) => (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a onClick={props.home} className="navbar-brand" href="#">Inicio</a>
+        <a className="navbar-brand" href="/">Inicio</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
@@ -10,31 +11,31 @@ const Navbar = (props) => (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={props.novela}>Novelas <span className="sr-only">(current)</span></a>
+                    <a className="nav-link" href="/novelas" >Novelas <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#" onClick={props.series}>Series Populares</a>
+                    <a className="nav-link" href="/series" >Series Populares</a>
                 </li>
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Acerca de Nosotros
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="#" onClick={props.faq}>FAQ</a>
-                        <a className="dropdown-item" href="#" onClick={props.contactenos}>Contactenos</a>
+                        <a className="dropdown-item" href="/faq">FAQ</a>
+                        <a className="dropdown-item" href="/contacto" >Contactenos</a>
                     </div>
                 </li>
                 <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         ADMIN
                     </a>
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="#" onClick={props.manejoUsuarios}>Manejo Usuarios</a>
-                        <a className="dropdown-item" href="#" onClick={props.manejoGeneros}>Manejo Generos</a>
-                        <a className="dropdown-item" href="#" onClick={props.manejoNovelas}>Manejo Novelas</a>
-                        <a className="dropdown-item" href="#" onClick={props.manejoGrupos}>Manejo Grupos</a>
-                        <a className="dropdown-item" href="#" onClick={props.manejoAutores}>Manejo Autores</a>
-                        <a className="dropdown-item" href="#" onClick={props.manejoRecomendaciones}>Manejo Recomendaciones</a>
+                        <a className="dropdown-item" href="/admin/usuarios" >Manejo Usuarios</a>
+                        <a className="dropdown-item" href="/admin/generos" >Manejo Generos</a>
+                        <a className="dropdown-item" href="/admin/novelas" >Manejo Novelas</a>
+                        <a className="dropdown-item" href="/admin/grupos" >Manejo Grupos</a>
+                        <a className="dropdown-item" href="/admin/autores" >Manejo Autores</a>
+                        <a className="dropdown-item" href="/admin/recomendaciones" >Manejo Recomendaciones</a>
                     </div>
                 </li>
             </ul>
