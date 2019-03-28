@@ -135,7 +135,7 @@ class Novelas extends React.Component {
         return (
             <div>
                 <form className="form-inline my-2 my-lg-0">
-                    <button type="button" className="btn btn-info" data-toggle="collapse" data-target="#filterForm">
+                    <button type="button" className="btn btn-info btn-outline-info" id="botonFiltro" data-toggle="collapse" data-target="#filterForm">
                         Filtrar
                     </button>
                     <input className="form-control mr-sm-2" type="search" placeholder="Search" id="searchNovela" aria-label="Search"></input>
@@ -162,7 +162,7 @@ class Novelas extends React.Component {
                         <button onClick={this.filtrarNovelasHandler} className="btn btn-outline-success my-2 my-sm-0">Aplicar Filtros</button>
                    </form>
                 </div>
-                <table>
+                <table id="tablaNovelas">
                     <thead>
                         <tr>
                             <th></th>

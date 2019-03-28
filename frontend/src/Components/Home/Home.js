@@ -49,7 +49,7 @@ class Home extends React.Component {
             <div>
                 <table className="table table-striped">
                     <thead>
-                        <tr>
+                        <tr id="tablaDeHome">
                             <th scope="col">Titulo Novela</th>
                             <th scope="col">Publicación</th>
                             <th scope="col">Grupo</th>

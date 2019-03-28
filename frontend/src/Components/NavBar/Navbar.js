@@ -4,7 +4,7 @@ import perfilImage from '../../assets/img/user.png'
 
 const Navbar = (props) => (
     <div>
-        <div className="row text-center">            
+        <div className="row text-center">
             <img src={bilbo} onClick={props.home} id="titulo"></img>
         </div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -52,12 +52,12 @@ const Navbar = (props) => (
                         <div className="row">
                             <a className="nav-link" href="#" onClick={props.perfil}>Perfil</a>
                             <img src={perfilImage} height="40px" onClick={props.perfil} id="perfilPequeño"></img>
-                        </div>
-                    </li>
+                        </div>                </li>
                 </ul>
             </div>
         </nav>
     </div>
+
 );
 
 export default Navbar;

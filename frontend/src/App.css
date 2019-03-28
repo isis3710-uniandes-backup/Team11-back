@@ -8,7 +8,14 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-#titulo{
+#tablaNovelas tr{
+  border-bottom: 1pt solid black;  
+}
+#tablaNovelas th{
+  background-color: #5099FF;  
+}
+
+#titulo, #perfilPequeño{
   cursor: pointer;
 }
 #foot {		
