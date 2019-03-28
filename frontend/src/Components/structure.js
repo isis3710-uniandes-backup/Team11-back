@@ -7,6 +7,10 @@ import Contactenos from './AboutUs/contactenos';
 import SeriesPops from './Series/SeriesPops';
 import Home from './Home/Home'
 import Perfil from './Usuario/Perfil'
+import AdminUsers from './Admin/Usuarios'
+import AdminGroups from './Admin/Grupos'
+import AdminRecomm from './Admin/Recomendaciones'
+import AdminGenre from './Admin/Generos'
 
 class Vista extends Component {
     constructor(props) {
@@ -23,6 +27,10 @@ class Vista extends Component {
                 <Route path="/contacto" exact component={Contactenos}/>
                 <Route path="/series" exact component={SeriesPops}/>
                 <Route path="/perfil" exact component={Perfil}/>
+                <Route path="/admin/usuarios" exact component={AdminUsers}/>
+                <Route path="/admin/grupos" exact component={AdminGroups}/>
+                <Route path="/admin/recomendaciones" exact component={AdminRecomm}/>
+                <Route path="/admin/generos" exact component={AdminGenre}/>
             </div>
         );
     }

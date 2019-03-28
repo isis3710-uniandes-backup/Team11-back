@@ -134,15 +134,14 @@ class Novelas extends React.Component {
         }
         return (
             <div>
-                <form className="form-inline my-2 my-lg-0">
-                    <button type="button" className="btn btn-info" data-toggle="collapse" data-target="#filterForm">
+                <div className="row">
+                <button type="button" className="btn btn-info btn-outline-info" id="botonFiltro" data-toggle="collapse" data-target="#filterForm">
                         Filtrar
                     </button>
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" id="searchNovela" aria-label="Search"></input>
-                    <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.findNovelas} type="submit">Search</button>
-                </form>
+                    <input className="form-control col-1 mr-sm-2" type="search" placeholder="Search" id="searchNovela" aria-label="Search"></input>
+                    <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.findNovelas}>Search</button>
+                </div>
                 <div id="filterForm" className="collapse">
-                   <form>
                         <p>Genero</p>
                         <select className="form-control" id="selectGenero">
                             <option value="all">Todos</option>
@@ -160,9 +159,9 @@ class Novelas extends React.Component {
                             {this.state.autores.map((el)=><option value={el[1]} key={el[1]}>{el[0]}</option>)}
                         </select>
                         <button onClick={this.filtrarNovelasHandler} className="btn btn-outline-success my-2 my-sm-0">Aplicar Filtros</button>
-                   </form>
                 </div>
-                <table>
+                
+                <table id="tablaNovelas">
                     <thead>
                         <tr>
                             <th></th>
