@@ -36,6 +36,15 @@ th{
 #foot a:hover {
   color: white;
 }
+.column {
+  float: left;
+  width: 33.3%;
+  padding: 10px;
+  height: 300px;
+}
+#faq{
+  text-align: left;
+}
 
 /* Clear floats after the columns */
 .row:after {

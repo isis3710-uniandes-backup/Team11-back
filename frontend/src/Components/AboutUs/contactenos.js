@@ -53,7 +53,7 @@ const Contactenos = (props) => (
                     </div>
                     <div my-text="student"><p>Student</p></div>
                 </div>
-                <img src="https://raw.githubusercontent.com/aeslava97/primerProyecto/master/primerProyecto/images/img2.png" className="rounded-circle img-fluid" alt="img2" id="img2"></img>
+                <img src="https://raw.githubusercontent.com/aeslava97/primerProyecto/master/primerProyecto/images/img2.png" className="rounded-circle img-fluid" alt="imgAmilkar" id="imgAmilkar"></img>
             </div>
             <div className="container-fluid px-0" id="foot">
                 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
