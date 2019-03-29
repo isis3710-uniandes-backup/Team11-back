@@ -11,7 +11,7 @@ var autoresRouter= require('./routes/autores');
 var fansubsRouter= require('./routes/fansubs');
 var generosRouter= require('./routes/generos');
 var capitulosRouter= require('./routes/capitulos');
-
+var comentariosRouter= require('./routes/comentarios');
 var playlistsRouter= require('./routes/playlists');
 var recomendacionesRouter= require('./routes/recomendaciones');
 var app = express();
@@ -19,6 +19,14 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+// quitarlo cuando se haga el build, esto lo saqué de https://stackoverflow.com/questions/18642828/origin-origin-is-not-allowed-by-access-control-allow-origin
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+     next();
+});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -33,6 +41,7 @@ app.use('/autores', autoresRouter);
 app.use('/fansubs', fansubsRouter);
 app.use('/generos', generosRouter);
 app.use('/capitulos', capitulosRouter);
+app.use('/comentarios', comentariosRouter);
 app.use('/playlists', playlistsRouter);
 app.use('/recomendaciones', recomendacionesRouter);
 
