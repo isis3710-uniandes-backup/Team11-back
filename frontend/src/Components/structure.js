@@ -11,6 +11,8 @@ import AdminUsers from './Admin/Usuarios'
 import AdminGroups from './Admin/Grupos'
 import AdminRecomm from './Admin/Recomendaciones'
 import AdminGenre from './Admin/Generos'
+import AdminAutor from './Admin/Autores'
+import NovelaDetail from './Novelas/NovelaDetail'
 
 class Vista extends Component {
     constructor(props) {
@@ -31,6 +33,8 @@ class Vista extends Component {
                 <Route path="/admin/grupos" exact component={AdminGroups}/>
                 <Route path="/admin/recomendaciones" exact component={AdminRecomm}/>
                 <Route path="/admin/generos" exact component={AdminGenre}/>
+                <Route path="/admin/autores" exact component={AdminAutor}/>
+                <Route path="/novelas/:idNovela" exact component={NovelaDetail}/>
             </div>
         );
     }

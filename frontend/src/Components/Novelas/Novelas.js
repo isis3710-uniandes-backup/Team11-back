@@ -43,7 +43,6 @@ class Novelas extends React.Component {
 
         let data=[...this.state.novelas];
         let novelas=[...this.state.novelas];
-        console.log(novelas);
         let gene=[];
         let aut=[];
         let idBusGen=this.state.generos.findIndex((el)=>{
