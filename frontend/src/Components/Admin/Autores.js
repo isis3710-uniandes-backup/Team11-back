@@ -23,7 +23,7 @@ class AdminAutor extends React.Component {
         let rows=this.state.autores.map((el,i)=>{
             return(
                 <tr key={i}>
-                    <th scope="row">{i}</th>
+                    <td scope="row">{i}</td>
                     <td>{el.nombre}</td>
                     <td>{el.idioma}</td>
                     <td>editar</td>

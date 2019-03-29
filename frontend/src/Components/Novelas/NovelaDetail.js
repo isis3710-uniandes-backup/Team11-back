@@ -1,6 +1,9 @@
 import React from 'react';
-import axios from 'axios'
-import {Link} from 'react-router-dom'
+import axios from 'axios';
+import {Link} from 'react-router-dom';
+import iconUpdate from '../../assets/img/iconUpdate.PNG';
+import iconDelete from '../../assets/img/iconDelete.PNG';
+
 class NovelaDetail extends React.Component {
     constructor(props) {
         super(props);
@@ -74,7 +77,8 @@ class NovelaDetail extends React.Component {
                 <th scope="row">{el.fecha}</th>
                 <td>{grupo}</td>
                 <td><a href={el.texto}>{el.titulo}</a></td>
-                <td><button>Editar</button><button>Borrar</button></td>
+                <td><button><img src={iconUpdate}></img></button>
+                <button><img src={iconDelete}></img></button></td>
                 </tr>
             );
         });
