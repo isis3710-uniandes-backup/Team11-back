@@ -74,7 +74,7 @@ class NovelaDetail extends React.Component {
             }
             return(
                 <tr key={i}>
-                <th scope="row">{el.fecha}</th>
+                <td scope="row">{el.fecha}</td>
                 <td>{grupo}</td>
                 <td><a href={el.texto}>{el.titulo}</a></td>
                 <td><button><img src={iconUpdate}></img></button>
@@ -101,10 +101,11 @@ class NovelaDetail extends React.Component {
             }
             return(
                 <tr key={i}>
-                <th scope="row">{usuario}</th>
+                <td scope="row"><strong>{usuario}</strong></td>
                 <td>{el.comentario}</td>
                 <td>{el.fecha}</td>
-                <td><button>Editar</button><button>Borrar</button></td>
+                <td><button><img src={iconUpdate}></img></button>
+                <button><img src={iconDelete}></img></button></td>
                 </tr>
             );
         });
