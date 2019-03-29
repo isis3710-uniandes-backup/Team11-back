@@ -47,9 +47,9 @@ class Home extends React.Component {
         }
         return (
             <div>
-                <table className="table table-striped">
+                <table className="table" id="tablaDeHome">
                     <thead>
-                        <tr id="tablaDeHome">
+                        <tr>
                             <th scope="col">Titulo Novela</th>
                             <th scope="col">Publicación</th>
                             <th scope="col">Grupo</th>
