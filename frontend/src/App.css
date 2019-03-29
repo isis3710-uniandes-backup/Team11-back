@@ -11,8 +11,11 @@ table {
 #tablaNovelas tr{
   border-bottom: 1pt solid black;  
 }
-#tablaNovelas th{
-  background-color: #5099FF;  
+th{
+  background-color: #769BD1;  
+}
+#tablaDeHome tr:nth-child(even) {
+  background-color: #DAE8FC;
 }
 
 #titulo, #perfilPequeño{

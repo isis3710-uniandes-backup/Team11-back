@@ -26,9 +26,9 @@ class Publicacion extends Component {
     render(){
         return(
             <tr>
-                <th scope="row">
+                <td scope="row">
                     {this.state.tituloNovela}
-                </th>
+                </td>
                 <td>
                     {this.props.data.titulo}
                 </td>
