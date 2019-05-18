@@ -17,6 +17,7 @@
     "fs": "0.0.1-security",
     "http-errors": "^1.6.3",
     "jsonfile": "^5.0.0",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.11",
