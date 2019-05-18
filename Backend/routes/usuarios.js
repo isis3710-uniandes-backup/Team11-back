@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var jsonfile = require('jsonfile');
+var middleware = require("../middleware.js");
 
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/',middleware.checkToken, function(req, res, next) {
     jsonfile.readFile('./persistence/Usuarios.json',(err,obj)=>{
         res.send(obj);
     });

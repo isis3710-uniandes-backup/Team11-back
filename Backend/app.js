@@ -35,6 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/login', indexRouter);
 app.use('/novelas', novelasRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/autores', autoresRouter);

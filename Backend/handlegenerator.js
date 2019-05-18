@@ -13,23 +13,27 @@ class HandlerGenerator {
     let username = req.body.username;
     let password = req.body.password;
     
+    var adm=null;
+    if(username==='admin' && password==='admin'){
+      adm='admin';
+    }
     let mockedUsername = 'admin';
     let mockedPassword = 'password';
     // Este usuario y contraseña, en un ambiente real, deben ser traidos de la BD
     let id = parseInt(req.params.id);
     let BDuser;
     jsonfile.readFile('./persistence/Usuarios.json',(err,obj)=>{
-        var us={};
+        var usua={};
         for (let index = 0; index < obj.length; index++) { 
           usua = obj[index];
           if(usua.nombre===username){
             us=usua;
           }
         }
-        if(us==={}){
+        if(usua==={}){
         }
         else{
-            BDuser=us;
+            BDuser=usua;
             mockedUsername = us.nombre;
             mockedPassword = us.password;
         }
@@ -37,7 +41,7 @@ class HandlerGenerator {
 
     // Si se especifico un usuario y contraseña, proceda con la validación
     // de lo contrario, un mensaje de error es retornado
-    if( username && password && BDuser) {
+    if( username && password && BDuser && adm===null) {
 
       // Si los usuarios y las contraseñas coinciden, proceda con la generación del token
       // de lo contrario, un mensaje de error es retornado
@@ -63,6 +67,16 @@ class HandlerGenerator {
         } );
 
       }
+
+    } else if(adm==='admin'){
+        let token2 = jwt.sign( { username: username },
+          config.secret, { expiresIn: '24h' } );
+      // Retorna el token el cuál debe ser usado durante las siguientes solicitudes
+      res.json( {
+        success: true,
+        message: 'Admin Authentication successful!',
+        token: token2
+      } );
 
     } else {
 
