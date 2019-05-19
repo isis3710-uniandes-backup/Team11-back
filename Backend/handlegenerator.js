@@ -54,6 +54,7 @@ class HandlerGenerator {
         // Retorna el token el cuál debe ser usado durante las siguientes solicitudes
         res.json( {
           success: true,
+          idusu: BDuser.id,
           message: 'Authentication successful!',
           token: token
         } );

@@ -1,1 +1,33 @@
-[{"id":1,"nombre":"user1","playlists":[1,2,3,8],"favoritos":[1,12,12,4],"grupo":-1},{"id":2,"nombre":"user2","playlists":[2,3],"favoritos":[1,4,6,8,12],"grupo":2},{"id":3,"nombre":"user3","playlists":[1,2],"favoritos":[1,4,6,8],"grupo":2},{"id":4,"nombre":"user4","playlists":[1,3],"favoritos":[1,4,6,8],"grupo":1}]
+[
+{
+    "id": 1,
+    "nombre": "user1",
+    "password":"password1",
+    "playlists": [1, 2, 3, 8],
+    "favoritos": [1, 12, 12, 4],
+    "grupo": -1
+},
+{
+    "id": 2,
+    "nombre": "user2",
+    "password":"password2",
+    "playlists": [2, 3],
+    "favoritos": [1, 4, 6, 8, 12],
+    "grupo": 2
+},
+{
+    "id": 3,
+    "nombre": "user3",
+    "password":"password3",
+    "playlists": [1, 2],
+    "favoritos": [1, 4, 6, 8],
+    "grupo": 2
+},
+{
+    "id": 4,
+    "nombre": "user4",
+    "password":"password4",
+    "playlists": [1, 3],
+    "favoritos": [1, 4, 6, 8],
+    "grupo": 1
+}]
