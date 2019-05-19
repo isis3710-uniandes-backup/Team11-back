@@ -50,12 +50,12 @@ class HandlerGenerator {
         // Se genera un nuevo token para el nombre de usuario el cuál expira en 24 horas
         let token = jwt.sign( { username: username },
           config.secret, { expiresIn: '24h' } );
-        
         // Retorna el token el cuál debe ser usado durante las siguientes solicitudes
         res.json( {
           success: true,
           message: 'Authentication successful!',
-          token: token
+          token: token,
+          userid:BDuser.id
         } );
 
       } else {
