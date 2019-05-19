@@ -23,7 +23,7 @@ app.set('view engine', 'pug');
 // quitarlo cuando se haga el build, esto lo saqué de https://stackoverflow.com/questions/18642828/origin-origin-is-not-allowed-by-access-control-allow-origin
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");
   res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
      next();
 });
