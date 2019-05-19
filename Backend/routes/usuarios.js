@@ -28,7 +28,7 @@ router.post('/', middleware.checkToken,function(req, res, next) {
     });
 });
 
-router.put('/:id', middleware.checkToken,function(req, res, next) {
+router.put('/:id', function(req, res, next) {
     let id = parseInt(req.params.id);
     jsonfile.readFile('./persistence/Usuarios.json',(err,obj)=>{
         var ind=-1;
