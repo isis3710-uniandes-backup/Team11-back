@@ -13,7 +13,7 @@ class HandlerGenerator {
     let username = req.body.username;
     let password = req.body.password;
     
-    var adm=null;
+    var adm;
     if(username==='admin' && password==='admin'){
       adm='admin';
     }
@@ -23,6 +23,8 @@ class HandlerGenerator {
     let id = parseInt(req.params.id);
     let BDuser;
     jsonfile.readFile('./persistence/Usuarios.json',(err,obj)=>{
+    console.log("leyendo el file");
+        var us ={};
         var usua={};
         for (let index = 0; index < obj.length; index++) { 
           usua = obj[index];
@@ -30,18 +32,16 @@ class HandlerGenerator {
             us=usua;
           }
         }
-        if(usua==={}){
+        if(us==={}){
         }
         else{
-            BDuser=usua;
+            BDuser=us;
             mockedUsername = us.nombre;
             mockedPassword = us.password;
         }
-    });
-
     // Si se especifico un usuario y contraseña, proceda con la validación
     // de lo contrario, un mensaje de error es retornado
-    if( username && password && BDuser && adm===null) {
+    if( username && password && BDuser) {
 
       // Si los usuarios y las contraseñas coinciden, proceda con la generación del token
       // de lo contrario, un mensaje de error es retornado
@@ -54,7 +54,6 @@ class HandlerGenerator {
         // Retorna el token el cuál debe ser usado durante las siguientes solicitudes
         res.json( {
           success: true,
-          idusu: BDuser.id,
           message: 'Authentication successful!',
           token: token
         } );
@@ -62,7 +61,8 @@ class HandlerGenerator {
       } else {
         
         // El error 403 corresponde a Forbidden (Prohibido) de acuerdo al estándar HTTP
-        res.send( 403 ).json( {
+        res.statusCode=403;
+        res.json( {
           success: false,
           message: 'Incorrect username or password'
         } );
@@ -80,14 +80,15 @@ class HandlerGenerator {
       } );
 
     } else {
-
       // El error 400 corresponde a Bad Request de acuerdo al estándar HTTP
-      res.send( 400 ).json( {
+      res.statusCode=400;
+      res.json( {
         success: false,
         message: 'Authentication failed! Please check the request'
       } );
 
     }
+    });
 
   }
 
