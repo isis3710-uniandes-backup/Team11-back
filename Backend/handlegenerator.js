@@ -23,7 +23,6 @@ class HandlerGenerator {
     let id = parseInt(req.params.id);
     let BDuser;
     jsonfile.readFile('./persistence/Usuarios.json',(err,obj)=>{
-    console.log("leyendo el file");
         var us ={};
         var usua={};
         for (let index = 0; index < obj.length; index++) { 
@@ -54,8 +53,8 @@ class HandlerGenerator {
         res.json( {
           success: true,
           message: 'Authentication successful!',
-          token: token,
-          userid:BDuser.id
+          userid: BDuser.id,
+          token: token
         } );
 
       } else {
