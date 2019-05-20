@@ -18,4 +18,11 @@ La idea de este proyecto es implementar una plataforma que recopile estas traduc
 
 # Para despliegue de la aplicación:
 
-ejecutar comando npm start en la carpeta Backend. (es necesario tener nodemon instalado)
+Ejecutar comando npm start en la carpeta Backend. (es necesario tener nodemon instalado)
+
+# URL del front desplegado en Heroku
+El siguiente es el URL del frontend desplegado en heroku:
+https://frontwebteam11.firebaseapp.com/
+# URL del back desplegado en Heroku
+El siguiente es el URL del backend desplegado en heroku:
+https://backwebteam11.herokuapp.com/
